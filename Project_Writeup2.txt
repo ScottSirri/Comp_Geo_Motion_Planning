@@ -1,0 +1,20 @@
+1. Scott Sirri
+
+2. This is the second of two demos which I completed for my project. This demo implements the creation of a visibility graph and the subsequent pathfinding process (Dijkstra's algorithm) on a user-generated graph of polygonal obstacles. 
+
+3.
+	1.
+Pathfinding is a well-explored domain on graphs, but the generation of graphs that map onto real scenarios is a distinct problem. My algorithm is largely based off the one provided in our textbook, though I cut corners in several places such that the actual asymptotic complexity of my implementation is suboptimal. I see this as a justifiable expense, however, considering the purpose of this application is purely pedagogical.
+There are few assumptions about the input to my algorithm. In one place it assumes, for example, that one vertex of an obstacle doesn't lie exactly on the segment between any other pair of vertices unless it's a horizontal or vertical edge; those cases are more likely considering the coordinates are constrained to integers.
+
+	2.
+The algorithm performs a rotational plane sweep on each obstacle vertex, as well as the starting and end points, and stores visibility edges between vertices that can see each other. It then creates a graph from that and calculates the shortest path from source to sink.
+
+	3.
+I animate the obstacle generation, rotational plane sweep and maintenance of sweep status, and implmentation of Dijkstra's algorithm.
+
+	4.
+I aimed to make the user interface very comprehensible. Buttons are sequentially disabled and enabled to make sure the next step of the algorithm is clear.
+I didn't take full advantage of the complexity reductions offered by structures such as binary search trees, and in several other places use linear-time traversals where I could've made it logarithmic. I decided instead, however, to use my time improving the user interface and visualization fo the algorithm.
+I used an implementation of mergesort that I found online at stackabuse.com written by Abhilash Kakumanu. 
+I also used an implementation of binary search trees that I found online at https://www.30secondsofcode.org/articles/s/js-data-structures-binary-search-tree . Their product really lived up to the name '30 Seconds of Code,' seeing as there were several bugs in the function responsible for removing nodes.
